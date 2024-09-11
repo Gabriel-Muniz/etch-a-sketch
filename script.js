@@ -23,10 +23,11 @@ function makeGrid(gridSize) {
 }
 
 function addHoverListener() {
+  const randomColor = `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
   const cells = document.querySelectorAll(".grid-cell");
   cells.forEach((cell) => {
     cell.addEventListener("mouseover", () => {
-      cell.style.backgroundColor = `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
+      cell.style.backgroundColor = randomColor;
     });
   });
 }
@@ -60,7 +61,6 @@ function getGridSize() {
     aux = prompt('New grid dimensions');
     if (aux <= 0 || aux > 100) {
       alert("Please choose a number between 1 and 100");
-      
     }
   } while (aux <= 0 || aux > 100);
   return aux;
