@@ -1,33 +1,34 @@
 const contentContainer = document.querySelector(".content");
 
-const gridContainer = document.createElement("div");
-gridContainer.classList.add("grid-container");
+function makeGrid(gridSize) {
+  const gridContainer = document.createElement("div");
+  gridContainer.classList.add("grid-container");
 
-let dimension = 25;
-
-for (let i = 0; i < dimension; i++) {
-  const gridLine = document.createElement("div");
-  gridLine.classList.add("grid-line");
-  for (let j = 0; j < dimension; j++) {
-    const cell = document.createElement("div");
-    cell.classList.add("grid-cell");
-    cell.style.width = `${900/dimension}px`;
-    cell.style.height = `${900/dimension}px`;
-    gridLine.appendChild(cell);
+  for (let i = 0; i < gridSize; i++) {
+    const gridLine = document.createElement("div");
+    gridLine.classList.add("grid-line");
+    for (let j = 0; j < gridSize; j++) {
+      const cell = document.createElement("div");
+      cell.classList.add("grid-cell");
+      cell.style.width = `${850 / gridSize}px`;
+      cell.style.height = `${850 / gridSize}px`;
+      gridLine.appendChild(cell);
+    }
+    gridContainer.appendChild(gridLine);
   }
-  gridContainer.appendChild(gridLine);
+
+  contentContainer.appendChild(gridContainer);
+
+  addHoverListener();
 }
 
-contentContainer.appendChild(gridContainer);
-
-function addHoverListener(){
-  const cells = document.querySelectorAll('.grid-cell');
-  cells.forEach(cell => {
-    cell.addEventListener('mouseover', () => {
+function addHoverListener() {
+  const cells = document.querySelectorAll(".grid-cell");
+  cells.forEach((cell) => {
+    cell.addEventListener("mouseover", () => {
       cell.style.backgroundColor = `rgb(${getRandomColor()}, ${getRandomColor()}, ${getRandomColor()})`;
-      
-    })
-  })
+    });
+  });
 }
 
 function getRandomColor() {
@@ -35,4 +36,21 @@ function getRandomColor() {
   return aux;
 }
 
-addHoverListener()
+function removeGrid() {
+  const gridToRemove = document.querySelector(".grid-container");
+
+  gridToRemove.remove();
+}
+
+const resetButton = document.querySelector('.btn-reset');
+console.log(resetButton);
+
+resetButton.addEventListener('click', () => {
+  removeGrid();
+  let aux = prompt('New grid dimensions');
+  makeGrid(aux);
+})
+
+addHoverListener();
+
+makeGrid(25);
