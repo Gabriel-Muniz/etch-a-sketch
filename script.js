@@ -47,10 +47,21 @@ console.log(resetButton);
 
 resetButton.addEventListener('click', () => {
   removeGrid();
-  let aux = prompt('New grid dimensions');
-  makeGrid(aux);
+  makeGrid(getGridSize());
 })
 
 addHoverListener();
 
 makeGrid(25);
+
+function getGridSize() {
+  let aux;
+  do {
+    aux = prompt('New grid dimensions');
+    if (aux <= 0 || aux > 100) {
+      alert("Please choose a number between 1 and 100");
+      
+    }
+  } while (aux <= 0 || aux > 100);
+  return aux;
+}
