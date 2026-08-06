@@ -56,20 +56,25 @@ resizeBtn.addEventListener('click', (e) => {
 })
 
 gridContainer.addEventListener('mouseover', (e) => {
-    if(!e.target.classList.contains('grid-cell')) return;
-    e.target.classList.add('painted');
+    if (!e.target.classList.contains('grid-cell')) return;
 
     if (randomMode) {
         let colorIndex = Math.floor(Math.random() * COLORS_RANDOM.length + 1);
         e.target.style.backgroundColor = COLORS_RANDOM[colorIndex];
+    } else {
+        e.target.style.backgroundColor = '';
+
     }
+
     if (darkenerMode) {
         let aux = Number(e.target.style.opacity);
         if (aux == 1) return;
         e.target.style.opacity = aux + 0.1;
     } else {
-        e.target.style.opacity = 1;
+        e.target.style.opacity = '';
     }
+
+    e.target.classList.add('painted');
 })
 
 function makeGrid(gridDimensions = 16) {
