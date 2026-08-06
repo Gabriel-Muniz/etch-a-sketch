@@ -42,7 +42,7 @@ darkenerBtn.addEventListener('click', (e) => {
 })
 
 resizeBtn.addEventListener('click', (e) => {
-    let newGridSize = prompt(`Insert size you want your grid:\nObs: Should be between 1 and 100`);
+    let newGridSize = prompt(`Insert size you want your grid:\nObs: Should be between 1 and 100`, 16);
     const VALID__GRID_SIZE = (newGridSize > 0 && newGridSize <= 100) ? true : false;
 
     if (VALID__GRID_SIZE) {
