@@ -21,7 +21,7 @@ const COLORS_RANDOM = [
 ]
 
 randomBtn.addEventListener('click', (e) => {
-    const spanState = document.querySelector('.btn-state');
+    const spanState = document.querySelector('.random-color-btn>.btn-state');
 
     randomMode = !randomMode;
 
