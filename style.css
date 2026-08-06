@@ -95,16 +95,18 @@ h1 {
     font-size: 50px;
     color: #000000;
 }
-.btn-container{
+
+.btn-container {
     display: flex;
     gap: 30px;
 
 }
 
-.btn-state{
+.btn-state {
     color: #f05;
 }
-.state-on{
+
+.state-on {
     color: #790;
 }
 
@@ -137,8 +139,7 @@ button:active {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    background-color: #00dddd
-;
+    background-color: #00dddd;
 }
 
 .grid-container {
@@ -146,9 +147,13 @@ button:active {
     flex-direction: column;
     width: 600px;
     height: 600px;
-    background-color: #f0f0f0;
+    background-color: white;
     align-items: flex-start;
+
+    border: 20px solid black;
+    box-sizing: content-box;
 }
+
 .grid-row {
     display: flex;
     width: 100%;
@@ -157,10 +162,8 @@ button:active {
 .grid-cell {
     flex: 1 1 0px;
     aspect-ratio: 1 / 1;
-    border: 1px solid black;
 }
 
 .painted {
     background-color: #ff0055;
-    /* transition: background-color 2s; */
 }
