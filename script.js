@@ -1,4 +1,4 @@
-function makeGrid(gridDimensions) {
+function makeGrid(gridDimensions = 16) {
     const gridContainer = document.querySelector('.grid-container');
 
     gridContainer.innerHTML = '';
@@ -20,4 +20,4 @@ function makeGrid(gridDimensions) {
 
 }
 
-makeGrid(16);
+makeGrid();
