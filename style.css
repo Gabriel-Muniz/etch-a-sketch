@@ -95,6 +95,18 @@ h1 {
     font-size: 50px;
     color: #000000;
 }
+.btn-container{
+    display: flex;
+    gap: 30px;
+
+}
+
+.btn-state{
+    color: #f05;
+}
+.state-on{
+    color: #790;
+}
 
 button {
     cursor: pointer;
@@ -102,6 +114,8 @@ button {
     border: 5px outset #c0c0c0;
     width: 150px;
     height: 50px;
+
+    flex: 1 0 fit-content;
 
     font-size: 18px;
     font-weight: 700;
