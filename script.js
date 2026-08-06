@@ -1,5 +1,10 @@
+const gridContainer = document.querySelector('.grid-container');
+
+gridContainer.addEventListener('mouseover', (e) => {
+    e.target.classList.add('painted');
+})
+
 function makeGrid(gridDimensions = 16) {
-    const gridContainer = document.querySelector('.grid-container');
 
     gridContainer.innerHTML = '';
 
