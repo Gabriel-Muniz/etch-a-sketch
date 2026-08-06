@@ -56,6 +56,7 @@ resizeBtn.addEventListener('click', (e) => {
 })
 
 gridContainer.addEventListener('mouseover', (e) => {
+    if(!e.target.classList.contains('grid-cell')) return;
     e.target.classList.add('painted');
 
     if (randomMode) {
