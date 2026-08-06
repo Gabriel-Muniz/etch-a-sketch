@@ -30,7 +30,6 @@ randomBtn.addEventListener('click', (e) => {
 
     spanState.classList.toggle('state-on')
 
-
     spanState.textContent = (randomMode) ? 'ON' : "OFF";
 })
 
@@ -88,11 +87,7 @@ function makeGrid(gridDimensions = 16) {
         }
 
         gridContainer.appendChild(gridRow);
-
     }
-
 }
-
-
 
 makeGrid();
