@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -78,11 +80,42 @@ body {
 }
 
 .header {
-    /* position: sticky; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     height: 200px;
-    background-color: yellow;
+    background-color: #8800ff;
     flex-shrink: 0;
     flex-grow: 0;
+}
+
+h1 {
+    font-family: "Tiny5", sans-serif;
+    font-size: 50px;
+    color: #000000;
+}
+
+button {
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 5px outset #c0c0c0;
+    width: 150px;
+    height: 50px;
+
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    box-shadow: #00000050 3px 3px 2px 2px;
+}
+
+button:active {
+    background-color: #f0f0f0;
+    border: 5px inset #c0c0c0;
+    color: #585858;
+    padding: 5px 0 0 5px;
+    box-shadow: inset 0px 0px 2px 2px #00000030;
 }
 
 .content {
@@ -90,7 +123,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    background-color: blueviolet;
+    background-color: #00dddd
+;
 }
 
 .grid-container {
@@ -98,11 +132,10 @@ body {
     flex-direction: column;
     width: 600px;
     height: 600px;
-    background-color: white;
+    background-color: #f0f0f0;
     align-items: flex-start;
 }
-
-.grid-row{
+.grid-row {
     display: flex;
     width: 100%;
 }
@@ -112,6 +145,8 @@ body {
     aspect-ratio: 1 / 1;
     border: 1px solid black;
 }
-.painted{
-    background-color: black;
+
+.painted {
+    background-color: #ff0055;
+    /* transition: background-color 2s; */
 }
