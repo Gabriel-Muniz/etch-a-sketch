@@ -52,7 +52,7 @@ resizeBtn.addEventListener('click', (e) => {
 
     alert(`That's not a valid number! Think about and try again!`)
 
-    resizeBtn.dispatchEvent('click')
+    resizeBtn.dispatchEvent(new Event('click'))
 })
 
 gridContainer.addEventListener('mouseover', (e) => {
