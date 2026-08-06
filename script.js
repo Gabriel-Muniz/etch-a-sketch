@@ -1,4 +1,19 @@
 const gridContainer = document.querySelector('.grid-container');
+const resizeBtn = document.querySelector('.resize-grid-btn');
+
+resizeBtn.addEventListener('click', (e) => {
+    let newGridSize = prompt(`Insert size you want your grid:\nObs: Should be between 1 and 100`);
+    const VALID__GRID_SIZE = (newGridSize > 0 && newGridSize <= 100) ? true : false;
+
+    if(VALID__GRID_SIZE) {
+        makeGrid(newGridSize);
+        return
+    }
+
+    alert(`That's not a valid number! Think about and try again!`)
+
+    resizeBtn.dispatchEvent('click')
+})
 
 gridContainer.addEventListener('mouseover', (e) => {
     e.target.classList.add('painted');
@@ -24,5 +39,7 @@ function makeGrid(gridDimensions = 16) {
     }
 
 }
+
+
 
 makeGrid();
