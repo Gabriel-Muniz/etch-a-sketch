@@ -1,8 +1,11 @@
 const gridContainer = document.querySelector('.grid-container');
 const resizeBtn = document.querySelector('.resize-grid-btn');
 const randomBtn = document.querySelector('.random-color-btn');
+const darkenerBtn = document.querySelector('.cell-darkener-btn');
 
 let randomMode = false;
+let darkenerMode = false;
+
 const COLORS_RANDOM = [
     '#000',
     '#585858',
@@ -31,6 +34,14 @@ randomBtn.addEventListener('click', (e) => {
     spanState.textContent = (randomMode) ? 'ON' : "OFF";
 })
 
+darkenerBtn.addEventListener('click', (e) => {
+    const spanState = document.querySelector('.cell-darkener-btn>.btn-state');
+    darkenerMode = !darkenerMode;
+
+    spanState.classList.toggle('state-on');
+    spanState.textContent = (darkenerMode) ? 'ON' : 'OFF';
+})
+
 resizeBtn.addEventListener('click', (e) => {
     let newGridSize = prompt(`Insert size you want your grid:\nObs: Should be between 1 and 100`);
     const VALID__GRID_SIZE = (newGridSize > 0 && newGridSize <= 100) ? true : false;
@@ -51,6 +62,13 @@ gridContainer.addEventListener('mouseover', (e) => {
     if (randomMode) {
         let colorIndex = Math.floor(Math.random() * COLORS_RANDOM.length + 1);
         e.target.style.backgroundColor = COLORS_RANDOM[colorIndex];
+    }
+    if (darkenerMode) {
+        let aux = Number(e.target.style.opacity);
+        if (aux == 1) return;
+        e.target.style.opacity = aux + 0.1;
+    } else {
+        e.target.style.opacity = 1;
     }
 })
 
