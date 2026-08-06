@@ -59,7 +59,7 @@ gridContainer.addEventListener('mouseover', (e) => {
     if (!e.target.classList.contains('grid-cell')) return;
 
     if (randomMode) {
-        let colorIndex = Math.floor(Math.random() * COLORS_RANDOM.length + 1);
+        let colorIndex = Math.floor(Math.random() * COLORS_RANDOM.length);
         e.target.style.backgroundColor = COLORS_RANDOM[colorIndex];
     } else {
         e.target.style.backgroundColor = '';
